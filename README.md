@@ -19,13 +19,13 @@ _______
 _______
 
 # **OBJECTIVES**
-  •	Develop a particularly fine-tuned skin-cancer-detection ViT model, focusing on high accuracy in distinguishing between benign and malignant skin lesions.
-  •	Leverages self-attention mechanisms in the ViTs for skin lesions to capture global dependencies and subtle patterns and thereby improve diagnostic precision beyond the traditional CNN-based methods.
-  •	Train and test it using a clinically annotated skin cancer dataset, such as the ISIC Archive, so that it delivers clinically relevant accuracy across types of skin lesions, including melanoma.
-  •	Use data augmentation techniques, since medical datasets are scarce and have limited sizes. This should be utilized to make the model more robust and reduce potential side effects of overfitting.
-  •	Optimize the ViT model's computational efficiency such that it would scale to afford real-time applications in clinical environments.
-  •	Ease interpretation of the model through availability of visualizations such as the attention map visualization of the areas in images that caused a prediction by the model, and thus ease clinician trust and transparency.
-  •	Measure the performance of the model with metrics such as sensitivity, specificity, accuracy, and AUC for high reliability in diagnostics.
+  <br>•	Develop a particularly fine-tuned skin-cancer-detection ViT model, focusing on high accuracy in distinguishing between benign and malignant skin lesions.
+  <br>•	Leverages self-attention mechanisms in the ViTs for skin lesions to capture global dependencies and subtle patterns and thereby improve diagnostic precision beyond the traditional CNN-based methods.
+  <br>•	Train and test it using a clinically annotated skin cancer dataset, such as the ISIC Archive, so that it delivers clinically relevant accuracy across types of skin lesions, including melanoma.
+  <br>•	Use data augmentation techniques, since medical datasets are scarce and have limited sizes. This should be utilized to make the model more robust and reduce potential side effects of overfitting.
+  <br>•	Optimize the ViT model's computational efficiency such that it would scale to afford real-time applications in clinical environments.
+  <br>•	Ease interpretation of the model through availability of visualizations such as the attention map visualization of the areas in images that caused a prediction by the model, and thus ease clinician trust and transparency.
+  <br>•	Measure the performance of the model with metrics such as sensitivity, specificity, accuracy, and AUC for high reliability in diagnostics.
 
 _______
 
