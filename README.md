@@ -1,5 +1,4 @@
 # LuminSkin
-# **Introduction**
 The goal of this research is to determine the potential of Vision Transformers to accurately classify skin cancer using medical imaging. 
 **Initially began as a college semester project, it evolved into a prospective research study.**
 _______
@@ -15,18 +14,18 @@ Index Terms — Vision Transformers, PyTorch, Skin Image Analysis, Skin Cancer, 
 _______
 
 ![image](https://github.com/user-attachments/assets/97cdc857-f141-4cc2-95cc-d09efa7cf2bb)
-Fig.1 Vision Transformer Layman Illustration
+<br>Fig.1 Vision Transformer Layman Illustration
 
 _______
 
 # **OBJECTIVES**
-•	Develop a particularly fine-tuned skin-cancer-detection ViT model, focusing on high accuracy in distinguishing between benign and malignant skin lesions.
-•	Leverages self-attention mechanisms in the ViTs for skin lesions to capture global dependencies and subtle patterns and thereby improve diagnostic precision beyond the traditional CNN-based methods.
-•	Train and test it using a clinically annotated skin cancer dataset, such as the ISIC Archive, so that it delivers clinically relevant accuracy across types of skin lesions, including melanoma.
-•	Use data augmentation techniques, since medical datasets are scarce and have limited sizes. This should be utilized to make the model more robust and reduce potential side effects of overfitting.
-•	Optimize the ViT model's computational efficiency such that it would scale to afford real-time applications in clinical environments.
-•	Ease interpretation of the model through availability of visualizations such as the attention map visualization of the areas in images that caused a prediction by the model, and thus ease clinician trust and transparency.
-•	Measure the performance of the model with metrics such as sensitivity, specificity, accuracy, and AUC for high reliability in diagnostics.
+  •	Develop a particularly fine-tuned skin-cancer-detection ViT model, focusing on high accuracy in distinguishing between benign and malignant skin lesions.
+  •	Leverages self-attention mechanisms in the ViTs for skin lesions to capture global dependencies and subtle patterns and thereby improve diagnostic precision beyond the traditional CNN-based methods.
+  •	Train and test it using a clinically annotated skin cancer dataset, such as the ISIC Archive, so that it delivers clinically relevant accuracy across types of skin lesions, including melanoma.
+  •	Use data augmentation techniques, since medical datasets are scarce and have limited sizes. This should be utilized to make the model more robust and reduce potential side effects of overfitting.
+  •	Optimize the ViT model's computational efficiency such that it would scale to afford real-time applications in clinical environments.
+  •	Ease interpretation of the model through availability of visualizations such as the attention map visualization of the areas in images that caused a prediction by the model, and thus ease clinician trust and transparency.
+  •	Measure the performance of the model with metrics such as sensitivity, specificity, accuracy, and AUC for high reliability in diagnostics.
 
 _______
 
@@ -40,8 +39,8 @@ The ViT architecture provides a powerful alternative to CNNs in the task of imag
 
 3. Transformer Encoder Blocks: After being tokenized, the patch embeddings, accompanied by the class token, are passed into the transformer encoder. The transformer architecture consists of two main parts in each of its encoder blocks:
 There are two modules: MHSA and FFN. The components are repeated across multiple layers or transformer blocks with residual connections and layer normalization for stability during training and easier gradient flow.
-| •	Multi-Head Self-Attention (MHSA): MHSA enables the model to learn the relationships among different patches by assigning attention weights, which allows it to focus on important patches across the image. The term "multi-head" indicates that a model contains multiple attention heads that can simultaneously look at different aspects of the image, capturing various interactions of features. For instance, a 16-head ViT model can process 16 different relationships in parallel, thereby taking a global view that is comprehensive.
-| •	Feed-Forward Neural Network (FFN): This is another position-wise feed-forward network in each transformer block after the attention mechanism. Each token undergoes linear transformations along a series, which promotes nonlinear patterns by the model and obtains stronger representations of advanced features from the data.
+  •	Multi-Head Self-Attention (MHSA): MHSA enables the model to learn the relationships among different patches by assigning attention weights, which allows it to focus on important patches across the image. The term "multi-head" indicates that a model contains multiple attention heads that can simultaneously look at different aspects of the image, capturing various interactions of features. For instance, a 16-head ViT model can process 16 different relationships in parallel, thereby taking a global view that is comprehensive.
+  •	Feed-Forward Neural Network (FFN): This is another position-wise feed-forward network in each transformer block after the attention mechanism. Each token undergoes linear transformations along a series, which promotes nonlinear patterns by the model and obtains stronger representations of advanced features from the data.
 
 4. Class Token Aggregation: From this processed sequence of patch embeddings, by feeding it to the transformer encoder, the transformer encoder output corresponding to the class token is extracted. Since the class token has acquired all the information coming from all the patches of the image due to the self-attention mechanism, it serves as the global representation of the whole image.
 
@@ -50,7 +49,7 @@ There are two modules: MHSA and FFN. The components are repeated across multiple
 6. Training and Optimization: The ViT model is trained with a suitable loss function for the considered classification task, such as cross entropy loss in binary or multiclass classification and uses optimization algorithms like Adam with techniques like learning rate scheduling and regularization to stabilize and optimize the training process.
 
 ![image](https://github.com/user-attachments/assets/a523582a-530c-416d-85ce-c48a84f11406)
-Fig.2 Vision Transformer Full Architecture
+<br>Fig.2 Vision Transformer Full Architecture
 
 _______
 
@@ -69,7 +68,7 @@ Every image in the ISIC Archive dataset is controlled qualitatively following st
 The ISIC Archive dataset of this study has a nicely labeled, balanced, and high-quality foundation in training and testing deep learning models aiming to detect skin cancer. It is standardized and spans a completely comprehensive range of benign and malignant cases, best suited for validation in the effectiveness of Vision Transformers and other deep learning architectures in medical image analysis.
 
 ![image](https://github.com/user-attachments/assets/2f3ad93b-5de7-4b8e-89e0-afd346f5444f)
-Fig.3 Distribution of Images before Data Augmentation, Test set [ LEFT ] and Train set [ RIGHT ]
+<br>Fig.3 Distribution of Images before Data Augmentation, Test set [ LEFT ] and Train set [ RIGHT ]
 
 _______
 
@@ -77,22 +76,22 @@ _______
 
 Data augmentation, thus, holds importance for increased diversity of the training dataset and reducing overfitting with an improvement in the model's generalization to new data. It is obtained by generating the differently transformed versions of the original images, through which the model encounters all such transformations that it would witness in real life. In this experiment, a variety of data augmentation techniques are used with specific strengths to be sought in the datasets.
 
-•	Random Horizontal Flip: This looks to flip images horizontally with a probability of 0.5. It introduces variety in the dataset so that features can easily be identified by the model whether they are upward or downward-oriented, especially in cases where lesion patterns appear symmetrically.
+  •	Random Horizontal Flip: This looks to flip images horizontally with a probability of 0.5. It introduces variety in the dataset so that features can easily be identified by the model whether they are upward or downward-oriented, especially in cases where lesion patterns appear symmetrically.
 
-•	Random Rotation (±30°): The images are randomly rotated by ±30° so that the model can be invariant to orientation. Skin lesions will come in different orientations and at times may not be well aligned so that this rotation would ensure the feature extraction for patterns would occur despite the variations in orientation.
+  •	Random Rotation (±30°): The images are randomly rotated by ±30° so that the model can be invariant to orientation. Skin lesions will come in different orientations and at times may not be well aligned so that this rotation would ensure the feature extraction for patterns would occur despite the variations in orientation.
 
-•	Color Jittering: Applying random brightness, contrast, saturation, and hue alterations of the images to simulate photos taken at various lighting conditions. This will help make the model less sensitive to lighting differences and skin color differences that are typically dramatic in clinical settings. Thus, the model pays more attention to structural and textural characteristics than to color-related characteristics of the lesion.
+  •	Color Jittering: Applying random brightness, contrast, saturation, and hue alterations of the images to simulate photos taken at various lighting conditions. This will help make the model less sensitive to lighting differences and skin color differences that are typically dramatic in clinical settings. Thus, the model pays more attention to structural and textural characteristics than to color-related characteristics of the lesion.
 
-•	Randomly resized crops (Scale 0.8-1.0): This augmentation randomly crops images and scales between 0.8 and 1.0 to vary the features scale. This will make the model more generalizable to images of all sizes, reducing overfitting in lesion recognition at a close-up or distant view.
+  •	Randomly resized crops (Scale 0.8-1.0): This augmentation randomly crops images and scales between 0.8 and 1.0 to vary the features scale. This will make the model more generalizable to images of all sizes, reducing overfitting in lesion recognition at a close-up or distant view.
 
-•	The Random Affine and Perspective Transformations: Affine transformations (such as translation, scaling, rotation, etc.) and change of perspective simulate changes in scale and viewpoint. Such transformations make the model much more robust against slight positional and shape variations, thus further increasing its ability to generalize. The slight variance in imaging angles does not make it seem overly sensitive to certain orientations or placements within the frame.
+  •	The Random Affine and Perspective Transformations: Affine transformations (such as translation, scaling, rotation, etc.) and change of perspective simulate changes in scale and viewpoint. Such transformations make the model much more robust against slight positional and shape variations, thus further increasing its ability to generalize. The slight variance in imaging angles does not make it seem overly sensitive to certain orientations or placements within the frame.
 
 These augmentations collectively enrich the training set in simulating a wide range of conditions by images. The model, in turn, captures more representative patterns and features in diverse scenarios, which helps reduce the risk of overfitting and improves performance on unseen data. By creating a varied dataset, these augmentations contribute toward building a more reliable and versatile diagnostic tool for skin cancer.
 
 ![image](https://github.com/user-attachments/assets/203d2e02-07c8-451a-9936-69bffd7e418a)
-Fig.4 Visualizing samples from “BENIGN” augmented dataset
+<br>Fig.4 Visualizing samples from “BENIGN” augmented dataset
 
 ![image](https://github.com/user-attachments/assets/f74c9142-4502-4a3e-9f0f-d9e3cc65fa17)
-Fig.5 Visualizing samples from “MALIGNANT” augmented dataset
+<br>Fig.5 Visualizing samples from “MALIGNANT” augmented dataset
 
 
